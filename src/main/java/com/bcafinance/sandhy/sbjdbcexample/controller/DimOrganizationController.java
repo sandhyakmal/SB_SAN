@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -104,7 +105,7 @@ public class DimOrganizationController {
     }
 
     @GetMapping("/dimorganizationss/datas")
-    public ResponseEntity<List<DimOrganization>> findAll() {
+    public ResponseEntity<List<DimOrganization>> getfindAll() {
         try {
             List<DimOrganization> lsDimOrganization = dimOrganizationRepository.findAll();
             if (lsDimOrganization.isEmpty()) {
@@ -116,3 +117,5 @@ public class DimOrganizationController {
         }
     }
 }
+
+

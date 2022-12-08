@@ -65,6 +65,7 @@ public class JDBCDimOrganizationRepository implements DimOrganizationRepository 
     @Override
     public List<DimOrganization> findAll() {
         return jdbcTemplate.query("SELECT * from DimOrganization",
+//                BeanPropertyRowMapper.newInstance(DimOrganization.class));
                 (rs, rowNum) ->
                         new DimOrganization(
                                 rs.getLong("organizationkey"),
@@ -75,6 +76,7 @@ public class JDBCDimOrganizationRepository implements DimOrganizationRepository 
                         )
                 );
     }
+
 
     @Override
     public List<DimOrganization> findByOrganizationName (String name){
